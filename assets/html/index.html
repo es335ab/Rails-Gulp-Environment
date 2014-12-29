@@ -2,12 +2,63 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>mock</title>
+  <title>トップページ</title>
 </head>
-<body>
-<h1 id="testId">aaa</h1>
+<body class="page-top">
 
+<div class="lyWrapper">
+  <header class="lyGlobalHeader">
+    <h1 class="siteTitle">CHPR</h1>
+    <ul class="triggers">
+      <li class="trigger is-showGlobalNavTrigger" id="showGlobalNavTrigger">
+        <i class="modIcon modIconMenu"></i>
+      </li>
+      <li class="trigger is-showSearchTrigger" id="showSearchTrigger">
+        <i class="modIcon modIconSearch"></i>
+      </li>
+    </ul>
+  </header>
 
+  <main class="lyMain">
+  </main>
+
+  <footer class="lyGlobalFooter">
+    <div class="lyIn">
+      <ul class="linkList">
+        <li><a href="#footerlink">footerLink1</a></li>
+        <li><a href="#footerlink">footerLink2</a></li>
+      </ul>
+    </div>
+  </footer>
+</div>
+
+<div class="lyGlobalNavs">
+  <nav class="lyGlobalNav">
+    <h2 class="hd">メニュー</h2>
+    <ul class="globalNavList">
+      <li class="current">なにか1</li>
+      <li><a href="#nanika">なにか2</a></li>
+    </ul>
+  </nav>
+  <nav class="lyGlobalNav">
+    <h2 class="hd">マイメニュー</h2>
+    <ul class="globalNavList">
+      <li><a href="#nanika">マイページ</a></li>
+      <li><a href="#nanika">記事を作る</a></li>
+    </ul>
+  </nav>
+</div>
+
+<section class="lySearch">
+  <h1 class="hd">検索</h1>
+  <div class="searchConditions">
+    <input type="text" placeholder='検索'>
+    <button type="submit">検索</button>
+  </div>
+</section>
+
+<div class="lyModal">
+</div>
 
 <script src="/js/common.js"></script>
 <script src="/js/nanika.js"></script>
