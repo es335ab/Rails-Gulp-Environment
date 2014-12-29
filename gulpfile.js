@@ -128,24 +128,25 @@ gulp.task('browser-sync', function() {
   });
 });
 
-gulp.task('build', function() {
+gulp.task('build', function(callback) {
   runSequence(
     'clean:public',
     'sprite',
-    ['copy:dev','stylus', 'browserify']
+    ['copy:dev','stylus', 'browserify'],
+    callback
   );
 });
 
 gulp.task('server', function() {
   runSequence(
     'build',
-    'watch'// warchはbuildが終了したら伝播して発火したい
+    'watch'
   );
 });
 
 gulp.task('optim', function() {
   runSequence(
-    //'build', ここだけ非同期を解除したい。それができたらタスク名をdistに変更したい
+    'build',
     'clean:mock',
     'uglify'
   );
