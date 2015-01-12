@@ -2,29 +2,25 @@
  * header
  */
 
-.lyHeader {
-  padding: 20px;
-  margin-bottom: 20px;
-  background-color: #e1e1e1;
-  .in {
-    width: 960px;
-    margin: 0 auto;
-    clearfix();
-  }
-  .siteTitle {
-    font-size: 36px;
-    float: left;
-    a {
-      text-decoration: none;
-      color: #000;
-    }
-  }
-  .headerNav {
-    float: right;
-    padding-top: 20px;
-    li {
-      float: left;
-      margin-right: 20px;
-    }
-  }
-}
+.lyGlobalHeader
+  position: relative
+  height: 24px
+  padding: 10px
+  border-bottom: solid 1px #ccc
+  .siteTitle
+    font-family: 'Montserrat'
+    color $material-red700
+    font-size: 20px
+    position: absolute
+    left: 50%
+    top: 4px
+    z-index: 1
+    margin-left: -40px
+  .triggers
+    padding-top: 2px
+    clearfix()
+    .trigger.is-showGlobalNavTrigger
+      float: left
+    .trigger.is-showSearchTrigger
+      float: right
+
