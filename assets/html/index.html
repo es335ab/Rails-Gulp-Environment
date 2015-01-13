@@ -3,64 +3,80 @@
 <head>
   <meta charset="utf-8">
   <title>トップページ</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, target-densitydpi=medium-dpi">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/common.css">
 </head>
-<body class="page-top">
+<body class="page-top" id="body">
 
-<div class="lyWrapper">
+<div class="lyWrapper" id="wrapper">
   <header class="lyGlobalHeader">
-    <h1 class="siteTitle">Nanika</h1>
+    <h1 class="siteTitle">Gagle.jp</h1>
     <ul class="triggers">
       <li class="trigger is-showGlobalNavTrigger" id="showGlobalNavTrigger">
-        <i class="modIcon modIconMenu"></i>
+        <i class="modIcon modIconMenu">メニュー</i>
       </li>
       <li class="trigger is-showSearchTrigger" id="showSearchTrigger">
-        <i class="modIcon modIconSearch"></i>
+        <i class="modIcon modIconSearch">検索</i>
       </li>
     </ul>
   </header>
 
-  <main class="lyMain">
+  <main class="lyMain" id="main">
+    <section class="modCsts">
+      <h1 class="cstsHdLv1">今話題の記事</h1>
+      <a href="#" class="modCst lyIn">
+        <h3 class="modHdLv3">話題のやつタイトル１</h3>
+        <p class="text">話題です話題です話題です話題です話題ですです話題です話題です話題ですです話題です話題です話題です...</p>
+      </a>
+      <a href="#" class="modCst lyIn">
+        <h3 class="modHdLv3">話題のやつタイトル２</h3>
+        <p class="text">話題です話題です話題です話題です話題です</p>
+      </a>
+    </section>
   </main>
 
   <footer class="lyGlobalFooter">
-    <div class="lyIn">
-      <ul class="linkList">
-        <li><a href="#footerlink">footerLink1</a></li>
-        <li><a href="#footerlink">footerLink2</a></li>
-      </ul>
-    </div>
+    &copy;Gagle.jp
   </footer>
 </div>
 
-<div class="lyGlobalNavs">
-  <nav class="lyGlobalNav">
-    <h2 class="hd">メニュー</h2>
+<div class="lyGlobalNavs" id="globalNavs">
+  <nav class="lyGlobalNav" id="globalNav">
     <ul class="globalNavList">
-      <li class="current">なにか1</li>
-      <li><a href="#nanika">なにか2</a></li>
-    </ul>
-  </nav>
-  <nav class="lyGlobalNav">
-    <h2 class="hd">マイメニュー</h2>
-    <ul class="globalNavList">
-      <li><a href="#nanika">マイページ</a></li>
-      <li><a href="#nanika">記事を作る</a></li>
+      <li><a href="#nanika">RPG</a></li>
+      <li><a href="#nanika">アクション</a></li>
     </ul>
   </nav>
 </div>
 
-<section class="lySearch">
-  <h1 class="hd">検索</h1>
-  <div class="searchConditions">
-    <input type="text" placeholder='検索'>
-    <button type="submit">検索</button>
+<secion class="lySearch hide" id="search">
+  <div class="lySearchHaad">
+    <h1 class="hd">検索</h1>
+    <div class="searchCloseTrigger" id="closeSearchTrigger">＜</div>
   </div>
-</section>
+  <div class="searchConditions">
+    <form action="/search" method="get">
+      <div class="modInput">
+        <input class="inputText" type="text" placeholder="ゲームのタイトルを検索">
+      </div>
+    </form>
+  </div>
+  <div class="searchAd" style="color: #fff; text-align: center; background: #999; padding: 5px">広告</div>
+</secion>
 
-<div class="lyModal">
+<div class="lyModal hide" id="modal">
+  <section class="lyModalIn is-targetSite">
+    <h2 class="modHdLv2">記事のタイトル</h2>
+    <div class="lyIn">
+      <p class="modSourceText">※参照元サイト：<a href="#" target="_blank">ファミ通</a></p>
+      <div class="targetContent">該当記事のコンテンツ該当記事のコンテンツ該当記事のコンテンツ該当記事のコンテンツ該当記事のコンテンツ該当記事のコンテンツ
+      </div>
+    </div>
+  </section>
+  <div class="modalCloseTrigger" id="closeModalTrigger">×</div>
 </div>
 
-<script src="/js/common.js"></script>
-<script src="/js/nanika.js"></script>
+<script src="/javascripts/common.js"></script>
+<script src="/javascripts/controlUi.js"></script>
 </body>
 </html>

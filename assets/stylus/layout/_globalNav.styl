@@ -1,15 +1,33 @@
 /*
- * sidebar
+ * lyGlobalNavs
  */
 
-.lySideBar {
-  float: right;
-  .bannerList li {
-    color: #fff;
-    background-color: #777;
-    width: 200px;
-    padding: 10px;
-    margin-bottom: 5px;
-    text-align: center;
-  }
-}
+.lyGlobalNavs
+  display: none
+  width: 100%;
+  height: 100%;
+  position: absolute
+  top: 0
+  left: 0
+  z-index: $globalNav-z
+  background: rgba(0, 0, 0, 0.8)
+  .lyGlobalNav
+    background: #fff
+    width: 250px
+    position: absolute
+    top: 0
+    left: -250px
+    transition: 300ms
+  .globalNavList
+    border-right: solid 1px #ccc
+    li
+      border-bottom: solid 1px #ccc
+      a
+        display: block
+        padding: 8px 6px 6px
+
+body.is-showGlobalNav
+  .lyGlobalNavs
+    display: block
+  .lyGlobalNav.is-show
+    left: 0
