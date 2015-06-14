@@ -3,6 +3,24 @@ Rails & Gulp Environment
 
 ## Rails Usage
 
+### Installing
+
+```
+bundle install --path vendor/bundle
+```
+
+### Data setting
+
+```
+// seed
+// not set now
+```
+
+### rails server
+
+```
+bundle exec rails s
+```
 
 ## Gulp Usage
 

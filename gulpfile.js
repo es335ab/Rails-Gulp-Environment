@@ -16,27 +16,28 @@ var path = {
   public: 'public'
 };
 
-gulp.task('stylus', function() {
-  return gulp.src(path.assets + '/stylus/*.styl')
-    //.pipe($.plumber({errorHandler: $.notify.onError('<%= error.message %>')}))
-    .pipe($.stylus({
-      use: nib()
+gulp.task('compass', function () {
+  gulp.src(path.assets + '/css/*.scss')
+    .pipe($.plumber())
+    .pipe($.compass({
+      css: path.public + '/css',
+      sass: path.assets + '/css',
+      image: path.assets + '/img'
     }))
-    .pipe($.pleeease())
-    .pipe(gulp.dest(path.public + '/stylesheets'))
-    .pipe(reload({stream:true}));
+    .pipe($.minifyCss())
+    .pipe(gulp.dest(path.public + '/css'));
 });
 
-gulp.task('sprite', function() {
-  var spriteData = gulp.src(path.assets + '/images/sprites/*.png').pipe(spritesmith({
+gulp.task('sprite', function () {
+  var spriteData = gulp.src(path.assets + '/img/sprites/*.png').pipe(spritesmith({
     imgName: 'sprite.png',
-    cssName: '_sprite.styl',
-    imgPath: '../images/sprite.png',
-    cssFormat: 'stylus'
+    cssName: '_sprite.scss',
+    imgPath: '../img/common/sprite.png',
+    cssFormat: 'scss'
   }));
   return merge(
-    spriteData.img.pipe(gulp.dest(path.public + '/images')),
-    spriteData.css.pipe(gulp.dest(path.assets + '/stylus/var'))
+    spriteData.img.pipe(gulp.dest(path.public + '/img')),
+    spriteData.css.pipe(gulp.dest(path.assets + '/css/production/var'))
   );
 });
 
@@ -65,7 +66,7 @@ gulp.task('browserify', function() {
           .bundle();
         }))
   )
-  .pipe(gulp.dest(path.public + '/javascripts'))
+  .pipe(gulp.dest(path.public + '/js'))
   .pipe(reload({stream:true}));
 });
 
@@ -76,16 +77,16 @@ gulp.task('jshint', function() {
 });
 
 gulp.task('uglify', function() {
-  return gulp.src(path.public + '/javascripts/*.js')
+  return gulp.src(path.public + '/js/*.js')
     .pipe($.uglify({
       preserveComments: saveLicense
     }))
-    .pipe(gulp.dest(path.public + '/javascripts'));
+    .pipe(gulp.dest(path.public + '/js'));
 });
 
 gulp.task('copy:dev', function() {
   return gulp.src([
-      path.assets + '/**/*.!(styl|js|md)',
+      path.assets + '/**/*.!(scss|js|md)',
       '!' + path.assets + '/images/sprites/**'
     ])
     .pipe(gulp.dest(path.public));
@@ -109,7 +110,7 @@ gulp.task('clean:mock', function() {
 
 gulp.task('watch', ['browser-sync'], function() {
   gulp.watch(path.assets + '/js/**/*.js', ['browserify']);
-  gulp.watch(path.assets + '/stylus/**/*.styl', ['stylus']);
+  gulp.watch(path.assets + '/css/**/*.scss', ['compass']);
   gulp.watch(path.assets + '/**/*.html', ['copy:dev']);
 });
 
@@ -132,7 +133,7 @@ gulp.task('build', function(callback) {
   runSequence(
     'clean:public',
     'sprite',
-    ['copy:dev','stylus', 'browserify'],
+    ['copy:dev','compass', 'browserify'],
     callback
   );
 });
