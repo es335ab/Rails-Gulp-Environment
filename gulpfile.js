@@ -1,6 +1,5 @@
 var gulp        = require('gulp');
 var $           = require('gulp-load-plugins')();
-var nib         = require('nib');
 var browserify  = require('browserify');
 var transform   = require('vinyl-transform');
 var merge       = require('merge-stream');
@@ -31,7 +30,7 @@ gulp.task('compass', function () {
 gulp.task('sprite', function () {
   var spriteData = gulp.src(path.assets + '/img/sprites/*.png').pipe(spritesmith({
     imgName: 'sprite.png',
-    cssName: '_sprite.scss',
+    cssName: '_sprite-data.scss',
     imgPath: '../img/common/sprite.png',
     cssFormat: 'scss'
   }));
@@ -87,7 +86,7 @@ gulp.task('uglify', function() {
 gulp.task('copy:dev', function() {
   return gulp.src([
       path.assets + '/**/*.!(scss|js|md)',
-      '!' + path.assets + '/images/sprites/**'
+      '!' + path.assets + '/img/sprites/**'
     ])
     .pipe(gulp.dest(path.public));
 });
@@ -138,7 +137,7 @@ gulp.task('build', function(callback) {
   );
 });
 
-gulp.task('server', function() {
+gulp.task('serve', function() {
   runSequence(
     'build',
     'watch'

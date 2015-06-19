@@ -5,12 +5,13 @@
 @charset "UTF-8";
 
 @import "compass";
-//@import "reset/normalize"; normarizeはbootstrapが入れているからいらない。
+
 @import "bootstrap/all";
 @import "production/var/setting";
-@import "production/var/sprite";
-@import "production/function/all";
-@import "production/reset/product";
-@import "production/util/all";
-@import "production/layout/all";
-@import "production/module/all";
+@import "production/var/sprite-data";
+@import "production/functions/all";
+@import "production/resets/product";
+@import "production/utils/all";
+@import "production/layouts/all";
+@import "production/modules/all";
+@import "production/pages/all";
