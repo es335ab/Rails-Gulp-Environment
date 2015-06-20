@@ -30,6 +30,7 @@ bundle exec rails s
 ```
 npm install -g gulp
 npm install -g easymock
+gem install compass
 ```
 
 - Local
