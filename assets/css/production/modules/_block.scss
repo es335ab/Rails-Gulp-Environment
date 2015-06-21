@@ -3,7 +3,24 @@
  */
 
 .prod-mod-image-text-block {
+  @include clearfix();
+  display: block;
+  >.image {
+    display: block;
+    float: left;
+    margin-right: 10px;
+    img {
+      display: block;
+    }
+    .caption-text {
+    }
+  }
+  >.text {
+    overflow: hidden;
+  }
   &.is-image-right {
-
+    float: right;
+    margin-left: 10px;
+    margin-right: 0;
   }
 }

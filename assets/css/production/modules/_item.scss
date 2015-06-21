@@ -1,0 +1,37 @@
+/*
+ * item
+ */
+
+.prod-mod-item {
+  display: block;
+  margin: 10px;
+  border: solid 1px #eee;
+  .item-img {
+    padding: 0 10px;
+    margin: 0 auto 10px;
+    background-color: #f7f8f9;
+    img {
+      display: block;
+      width: 100%;
+      margin: 0 auto;
+      width: 100%;
+      max-width: 320px;
+    }
+  }
+  .item-title {
+    margin: 10px 0 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .item-information {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .item-price-text {
+    font-weight: bold;
+  }
+  .item-footer {
+    background-color: #f7f8f9;
+    padding: 10px;
+  }
+}

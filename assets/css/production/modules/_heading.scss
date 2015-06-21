@@ -1,0 +1,25 @@
+/*
+ * module/heading
+ */
+
+.prod-mod-heading {
+  // 見出しはラップして使う想定
+
+  @include clearfix();
+  position: relative;
+  font-weight: bold;
+  &.lv-1 {
+    .heading-text {
+      font-size: 18px;
+    }
+  }
+  &.lv-2 {
+    .heading-text {}
+  }
+  &.lv-3 {
+    .heading-text {}
+  }
+  &.is-shallow-lay {
+    background-color: #f7f8f9;
+  }
+}

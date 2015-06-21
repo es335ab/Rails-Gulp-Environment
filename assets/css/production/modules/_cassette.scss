@@ -1,0 +1,17 @@
+/*
+ * cassette
+ */
+
+.prod-mod-cassette {
+  &.has-arrow {
+    position: relative;
+    padding-right: 30px;
+  }
+  .arrow {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    margin-top: -10px;
+    color: #222;
+  }
+}

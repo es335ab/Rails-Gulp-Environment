@@ -1,0 +1,14 @@
+/*
+ * unit
+ */
+
+.prod-util-unit {
+  margin: 10px;
+  .prod-mod-cassette {
+    border: solid 1px #eee;
+    border-top-width: 0;
+    &:first-child {
+      border-top-width: 1px;
+    }
+  }
+}

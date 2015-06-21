@@ -5,13 +5,31 @@
 
 body {
   word-wrap: break-word;
-  // color: #333;
-  // font-size: 14px;
-  // line-height: 1.6;
+  color: #222;
+  font-size: 14px;
+  line-height: 1.4em;
 }
 a {
   text-decoration: none;
+  color: #588cc7;
 }
+h1,
+h2,
+h3,
+p,
+div {
+  font-size: 14px;
+  line-height: 1.4em;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: bold;
+}
+
 input[type="text"],
 textarea {
   outline-width: 0;
