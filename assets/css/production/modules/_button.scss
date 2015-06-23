@@ -7,6 +7,10 @@
   display: block;
   width: 100%;
   font-weight: bold;
+  .bs-glyphicon {
+    vertical-align: -1px;
+    margin-right: 4px;
+  }
 }
 
 .prod-mod-btn {}
