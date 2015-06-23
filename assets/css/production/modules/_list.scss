@@ -3,7 +3,15 @@
  */
 
 .prod-mod-clause-list {
+  @include clearfix();
+  list-style-type: none;
+  &.has-tags {
+    li {
+      margin-right: 5px;
+    }
+  }
   li {
-    display: inline-block;
+  	float: left;
+    margin: 0 5px 5px 0;
   }
 }

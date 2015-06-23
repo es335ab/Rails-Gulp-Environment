@@ -421,7 +421,7 @@
         background-color: $navbar-default-link-hover-bg;
       }
     }
-    > .bs-active > a {
+    > .active > a {
       &,
       &:hover,
       &:focus {
@@ -478,7 +478,7 @@
             background-color: $navbar-default-link-hover-bg;
           }
         }
-        > .bs-active > a {
+        > .active > a {
           &,
           &:hover,
           &:focus {
@@ -555,7 +555,7 @@
         background-color: $navbar-inverse-link-hover-bg;
       }
     }
-    > .bs-active > a {
+    > .active > a {
       &,
       &:hover,
       &:focus {
@@ -618,7 +618,7 @@
             background-color: $navbar-inverse-link-hover-bg;
           }
         }
-        > .bs-active > a {
+        > .active > a {
           &,
           &:hover,
           &:focus {

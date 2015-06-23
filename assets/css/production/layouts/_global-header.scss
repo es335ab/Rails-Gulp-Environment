@@ -2,4 +2,24 @@
  * layout/global-header
  */
 
-.prod-ly-global-header {}
+.prod-ly-global-header {
+  background-color: #666;
+  color: #fff;
+  position: relative;
+  .site-title {
+    text-align: center;
+    padding: 10px 0;
+  }
+  .trigger {
+  	position: absolute;
+  	top: 10px;
+  	font-size: 18px;
+  	cursor: pointer;
+  	&.is-show-global-nav-trigger {
+  	  left: 15px;
+  	}
+  	&.is-show-search-trigger {
+  	  right: 15px;
+  	}
+  }
+}

@@ -14,7 +14,6 @@
       display: block;
       width: 100%;
       margin: 0 auto;
-      width: 100%;
       max-width: 320px;
     }
   }
@@ -33,5 +32,11 @@
   .item-footer {
     background-color: #f7f8f9;
     padding: 10px;
+    margin-top: 10px;
+  }
+  .prod-mod-clause-list.is-item-tags {
+    margin: 10px 0;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }

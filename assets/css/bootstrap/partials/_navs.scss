@@ -92,7 +92,7 @@
     }
 
     // Active state, and its :hover to override normal :hover
-    &.bs-active > a {
+    &.active > a {
       &,
       &:hover,
       &:focus {
@@ -127,7 +127,7 @@
     }
 
     // Active state
-    &.bs-active > a {
+    &.active > a {
       &,
       &:hover,
       &:focus {
@@ -196,9 +196,9 @@
     border-radius: $border-radius-base;
   }
 
-  > .bs-active > a,
-  > .bs-active > a:hover,
-  > .bs-active > a:focus {
+  > .active > a,
+  > .active > a:hover,
+  > .active > a:focus {
     border: 1px solid $nav-tabs-justified-link-border-color;
   }
 
@@ -207,9 +207,9 @@
       border-bottom: 1px solid $nav-tabs-justified-link-border-color;
       border-radius: $border-radius-base $border-radius-base 0 0;
     }
-    > .bs-active > a,
-    > .bs-active > a:hover,
-    > .bs-active > a:focus {
+    > .active > a,
+    > .active > a:hover,
+    > .active > a:focus {
       border-bottom-color: $nav-tabs-justified-active-link-border-color;
     }
   }
@@ -224,7 +224,7 @@
   > .bs-tab-pane {
     display: none;
   }
-  > .bs-active {
+  > .active {
     display: block;
   }
 }
