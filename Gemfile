@@ -49,3 +49,5 @@ group :test do
   gem 'rspec'
   gem 'rspec-rails'
 end
+
+gem "compass", "~> 0.12.2"
